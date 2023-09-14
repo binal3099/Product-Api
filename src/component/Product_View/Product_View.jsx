@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react'
 import { Button, Card, Container, Row, Table } from 'react-bootstrap';
-import { allData, get_dataAsync } from '../../Severice/Action/Product_Action';
+import { Product_editAsync, allData, get_dataAsync, product_removeAsync } from '../../Severice/Action/Product_Action';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
 
 function Product_View() {
+
+  const navigate = useNavigate()
 
   const { Products } = useSelector(state => state)
   // console.log("Product",Products);
@@ -16,6 +19,20 @@ function Product_View() {
   useEffect(() => {
     alldata()
   }, []);
+
+
+  const handleEdit = async(id,data)=>{
+    await dispatch (Product_editAsync(id,data));
+
+    navigate(`/edit/:${id}`);
+    
+  }
+
+  const handleRemove = async(id)=>{
+    await dispatch(product_removeAsync(id));
+
+  }
+
 
   return (
     <>
@@ -70,8 +87,8 @@ function Product_View() {
                       <td><button className='btn btn-danger' onClick={() => handleRemove(d.id)}>
                         Remove
                       </button> || 
-                      <button className='btn btn-primary' onClick={() => handleRemove(d.id)}>
-                        Delete
+                      <button className='btn btn-primary' onClick={() => handleEdit(d.id, d)}>
+                        Edit
                       </button>
                       
                       </td>

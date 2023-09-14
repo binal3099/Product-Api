@@ -6,6 +6,8 @@ const initialstate = {
 
 const product_reducer = (state = initialstate, action)=>{
 
+    console.log("action",action);
+
     switch (action.type) {
         case "Loading":
             return{
@@ -17,7 +19,15 @@ const product_reducer = (state = initialstate, action)=>{
             return{
                 ...state,
                 loading: false,
-                Products: action.payload
+                Products: action.payload,
+                product: null
+            }
+
+        case "Single_product":
+            return{
+                ...state,
+                loading: false,
+                product: action.payload
             }
         default:
             return state;
