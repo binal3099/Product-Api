@@ -70,6 +70,7 @@ function Product_View() {
                 <th>Image</th>
                 <th>Product Name</th>
                 <th>Price</th>
+                <th>Qty</th>
                 <th>Product Dec</th>
                 <th>Action</th>
 
@@ -83,6 +84,7 @@ function Product_View() {
                       <td><img src={d.image} style={{ width: "100px", height: "100px" }} /></td>
                       <td>{d.name}</td>
                       <td>{d.price}</td>
+                      <td>{d.qty}</td>
                       <td>{d.dec}</td>
                       <td><button className='btn btn-danger' onClick={() => handleRemove(d.id)}>
                         Remove

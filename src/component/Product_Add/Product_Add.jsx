@@ -14,7 +14,7 @@ function Product_Add() {
 
 
     const [inputList, setinputList] = useState({
-        img : '',
+        image: '',
         name: '',
         price: '',
         qty: '',
@@ -45,21 +45,21 @@ function Product_Add() {
 
         e.preventDefault();
 
-        console.log("inputyList", inputList);
+        // console.log("inputyList", inputList);
 
         dispatch(Product_addAsync(inputList));
 
         navigate('/view')
 
         setinputList({
-            img :'',
+            image: '',
             name: '',
             price: '',
             qty: '',
             dec: ''
         })
 
-        
+
 
     }
 
@@ -70,10 +70,14 @@ function Product_Add() {
                     <div className="col-12">
                         <Form noValidate validated={validated} onSubmit={handleSubmit}>
                             <Row className="mb-3">
-                            <Form.Group as={Col} md="4" xl="6" controlId="validationCustom01" style={{ margin: "0px auto 20px auto", display: "flex", alignItems: "baseline" }}>
-                                    <Form.Label style={{ width: "15%", marginRight: 10 }}>Product Img</Form.Label>
-                                    <Form.Control required type="file" name="img" value={inputList.img} onChange={handleChange} placeholder="product img" accept='image/*' />
+                                <Form.Group as={Col} md="4" xl="6" controlId="validationCustom01" style={{ margin: "0px auto 20px auto", display: "flex", alignItems: "baseline" }}>
+                                    <Form.Label style={{ width: "15%", marginRight: 10 }}>Img</Form.Label>
+                                    <Form.Control required type="text" name="image" value={inputList.image} onChange={handleChange} placeholder="product img" />
                                 </Form.Group>
+                                {/* <Form.Group as={Col} md="4" xl="6" controlId="validationCustom01" style={{ margin: "0px auto 20px auto", display: "flex", alignItems: "baseline" }}>
+                                    <Form.Label style={{ width: "15%", marginRight: 10 }}>Product Img</Form.Label>
+                                    <Form.Control required type="file" name="image" value={inputList.image} onChange={handleChange} placeholder="product img" accept='image/*' />
+                                </Form.Group> */}
                                 <Form.Group></Form.Group>
 
                                 <Form.Group as={Col} md="4" xl="6" controlId="validationCustom01" style={{ margin: "0px auto 20px auto", display: "flex", alignItems: "baseline" }}>
@@ -99,14 +103,14 @@ function Product_Add() {
                                     <Form.Control required type="text" name="dec" value={inputList.dec} onChange={handleChange} placeholder="description" />
                                 </Form.Group>
                             </Row>
-                            <Button type="submit" style={{margin: "0 auto", display: "flex"}}>Submit</Button>
+                            <Button type="submit" style={{ margin: "0 auto", display: "flex" }}>Submit</Button>
                         </Form>
                     </div>
 
                 </div>
             </Container>
 
-            
+
 
         </>
 

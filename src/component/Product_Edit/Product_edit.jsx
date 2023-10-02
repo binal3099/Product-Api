@@ -47,7 +47,7 @@ function Product_edit() {
         navigate('/view')
 
         setinputList({
-            img :'',
+            image :'',
             name: '',
             price: '',
             qty: '',
@@ -65,10 +65,10 @@ function Product_edit() {
                     <div className="col-12">
                         <Form noValidate validated={validated} onSubmit={handleSubmit}>
                             <Row className="mb-3">
-                            {/* <Form.Group as={Col} md="4" xl="6" controlId="validationCustom01" style={{ margin: "0px auto 20px auto", display: "flex", alignItems: "baseline" }}>
+                            <Form.Group as={Col} md="4" xl="6" controlId="validationCustom01" style={{ margin: "0px auto 20px auto", display: "flex", alignItems: "baseline" }}>
                                     <Form.Label style={{ width: "15%", marginRight: 10 }}>Product Img</Form.Label>
-                                    <Form.Control required type="file" name="img" value={inputList.img} onChange={handleChange} placeholder="product img" accept='image/*' />
-                            </Form.Group> */}
+                                    <Form.Control required type="text" name="image" value={inputList.image} onChange={handleChange} placeholder="product img" accept='image/*' />
+                            </Form.Group>
                                 <Form.Group></Form.Group>
 
                                 <Form.Group as={Col} md="4" xl="6" controlId="validationCustom01" style={{ margin: "0px auto 20px auto", display: "flex", alignItems: "baseline" }}>

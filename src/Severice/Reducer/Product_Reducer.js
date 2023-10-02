@@ -6,7 +6,7 @@ const initialstate = {
 
 const product_reducer = (state = initialstate, action)=>{
 
-    console.log("action",action);
+    // console.log("action",action);
 
     switch (action.type) {
         case "Loading":
