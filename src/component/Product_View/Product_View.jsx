@@ -21,8 +21,9 @@ function Product_View() {
   }, []);
 
 
-  const handleEdit = async(id,data)=>{
-    await dispatch (Product_editAsync(id,data));
+  const handleEdit =async (id,data)=>{
+
+    await dispatch(Product_editAsync(id, data));
 
     navigate(`/edit/:${id}`);
     

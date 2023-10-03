@@ -12,21 +12,23 @@ function Product_edit() {
 
     const navigate = useNavigate()
 
-    const {product} = useSelector(state => state)
+    const product = useSelector(state => state.product)
+    console.log("product",product);
 
     const [inputList, setinputList] = useState(product);
+    console.log(inputList);
 
     const handleChange = (e) => {
         let name = e.target.name;
         let value = e.target.value
 
-        setinputList({ ...inputList, [name]: value }, e.target.files)
+        setinputList({ ...inputList, [name]: value })
         // setinputList(e.target.files)
         // console.log("name",name);
 
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit =async (e) => {
 
         // console.log(e);
 
@@ -42,7 +44,7 @@ function Product_edit() {
 
         console.log("inputyList", inputList);
 
-        dispatch(product_updateAsync(inputList.id, inputList));
+        await dispatch(product_updateAsync(inputList.id, inputList));
 
         navigate('/view')
 
@@ -67,7 +69,7 @@ function Product_edit() {
                             <Row className="mb-3">
                             <Form.Group as={Col} md="4" xl="6" controlId="validationCustom01" style={{ margin: "0px auto 20px auto", display: "flex", alignItems: "baseline" }}>
                                     <Form.Label style={{ width: "15%", marginRight: 10 }}>Product Img</Form.Label>
-                                    <Form.Control required type="text" name="image" value={inputList.image} onChange={handleChange} placeholder="product img" accept='image/*' />
+                                    <Form.Control required type="text" name="image" value={inputList.image} onChange={handleChange} placeholder="product img" />
                             </Form.Group>
                                 <Form.Group></Form.Group>
 
