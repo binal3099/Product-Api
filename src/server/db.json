@@ -7,6 +7,14 @@
       "qty": "30",
       "dec": "",
       "id": 104
+    },
+    {
+      "image": "\"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\"",
+      "name": "laptop",
+      "price": "50000",
+      "qty": "20",
+      "dec": "best",
+      "id": 105
     }
   ]
 }
